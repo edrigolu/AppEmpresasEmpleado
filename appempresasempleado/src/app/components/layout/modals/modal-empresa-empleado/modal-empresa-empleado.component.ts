@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { AfterViewInit, Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Empleado } from 'src/app/interfaces/empleado';
@@ -12,7 +12,7 @@ import { EmpresaEmpleadoService } from 'src/app/services/empresa-empleado.servic
   templateUrl: './modal-empresa-empleado.component.html',
   styleUrls: ['./modal-empresa-empleado.component.css']
 })
-export class ModalEmpresaEmpleadoComponent {
+export class ModalEmpresaEmpleadoComponent implements OnInit, AfterViewInit {
 
 
   formEmpresaEmpleado: FormGroup;
@@ -60,16 +60,22 @@ export class ModalEmpresaEmpleadoComponent {
     })
 
   }
-
-  ngOnInit(): void {
-    if (this.dataEmpresaEmpleado != null) {
-      this.formEmpresaEmpleado.patchValue({
-        idEmpresa: this.dataEmpresaEmpleado.idEmpresa,
-        idEmpleado: this.dataEmpresaEmpleado.idEmpleado,
-        esActivo: this.dataEmpresaEmpleado.esActivo.toString
-      })
-    }
+  ngAfterViewInit(): void {
+    throw new Error('Method not implemented.');
   }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
+
+  // ngOnInit(): void {
+  //   if (this.dataEmpresaEmpleado != null) {
+  //     this.formEmpresaEmpleado.patchValue({
+  //       idEmpresa: this.dataEmpresaEmpleado.idEmpresa,
+  //       idEmpleado: this.dataEmpresaEmpleado.idEmpleado,
+  //       esActivo: this.dataEmpresaEmpleado.esActivo.toString
+  //     })
+  //   }
+  // }
 
   saveRelationship() {
     const _empresaEmpleado: EmpresaEmpleado = {
@@ -107,6 +113,8 @@ export class ModalEmpresaEmpleadoComponent {
     //   })
 
     // }
+
   }
 
 }
+  
