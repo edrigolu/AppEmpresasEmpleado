@@ -46,7 +46,7 @@ export class ModalEmpresaComponent implements OnInit {
   guardarEmpresa() {
     const _empresa: Empresa = {
       idEmpresa: this.datosEmpresa == null ? 0 : this.datosEmpresa.idEmpresa,
-      nombreEmpresa: this.formEmpresa.value.nombres,
+      nombreEmpresa: this.formEmpresa.value.nombreEmpresa,
       esActivo: parseInt(this.formEmpresa.value.esActivo)
     }
     if (this.datosEmpresa == null) {

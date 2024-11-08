@@ -52,8 +52,7 @@ export class ModalEmpleadoComponent implements OnInit {
       nombres: this.formEmpleado.value.nombres,
       apellidos: this.formEmpleado.value.apellidos,
       numDocumento: this.formEmpleado.value.numDocumento,
-      esActivo: parseInt(this.formEmpleado.value.esActivo),
-      empresa: []
+      esActivo: parseInt(this.formEmpleado.value.esActivo)      
     }
     if (this.datosEmpleado == null) {
       this._empleadoService.create(_empleado).subscribe({
