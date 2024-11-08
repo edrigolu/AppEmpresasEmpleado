@@ -15,21 +15,21 @@ import { EmpresaEmpleadoService } from 'src/app/services/empresa-empleado.servic
 export class ModalEmpresaEmpleadoComponent {
 
 
-  formEmpresaEmpleado: FormGroup;  
+  formEmpresaEmpleado: FormGroup;
   titleAction: string = "Nueva relación empresa & empleado";
   buttonAction: string = "Guardar";
   listEmpresas: Empresa[] = [];
-  listEmpleados:Empleado[]=[];
-  
+  listEmpleados: Empleado[] = [];
+
   constructor(private currentModal: MatDialogRef<ModalEmpresaEmpleadoComponent>,
     @Inject(MAT_DIALOG_DATA) public dataEmpresaEmpleado: EmpresaEmpleado,
     private fb: FormBuilder,
-    private _servicioEmpresaEmpleado: EmpresaEmpleadoService,    
+    private _servicioEmpresaEmpleado: EmpresaEmpleadoService,
     private _utilidadService: UtilidadService) {
 
     this.formEmpresaEmpleado = this.fb.group({
       idEmpresa: ['', Validators.required],
-      idEmpleado: ['', Validators.required],      
+      idEmpleado: ['', Validators.required],
       esActivo: [1, Validators.required],
     });
     if (this.dataEmpresaEmpleado != null) {
@@ -63,7 +63,7 @@ export class ModalEmpresaEmpleadoComponent {
 
   ngOnInit(): void {
     if (this.dataEmpresaEmpleado != null) {
-      this.formEmpresaEmpleado.patchValue({        
+      this.formEmpresaEmpleado.patchValue({
         idEmpresa: this.dataEmpresaEmpleado.idEmpresa,
         idEmpleado: this.dataEmpresaEmpleado.idEmpleado,
         esActivo: this.dataEmpresaEmpleado.esActivo.toString
@@ -71,9 +71,9 @@ export class ModalEmpresaEmpleadoComponent {
     }
   }
 
-  saveUser() {
+  saveRelationship() {
     const _empresaEmpleado: EmpresaEmpleado = {
-      idEmpresaEmpleado: this.dataEmpresaEmpleado == null ? 0 : this.dataEmpresaEmpleado.idEmpresaEmpleado,         
+      idEmpresaEmpleado: this.dataEmpresaEmpleado == null ? 0 : this.dataEmpresaEmpleado.idEmpresaEmpleado,
       idEmpresa: this.formEmpresaEmpleado.value.idEmpresa,
       idEmpleado: this.formEmpresaEmpleado.value.idEmpleado,
       esActivo: parseInt(this.formEmpresaEmpleado.value.esActivo)
@@ -88,9 +88,10 @@ export class ModalEmpresaEmpleadoComponent {
             this._utilidadService.mostrarAlerta("Usuario no fue registrado.", "Error");
           }
         },
-        error: () => {}
+        error: () => { }
       })
-    // } else {
+    }
+    //  else {
     //   this._servicioEmpresaEmpleado.edit(_empresaEmpleado).subscribe({
     //     next: (data) => {
     //       if (data.status) {
@@ -104,8 +105,8 @@ export class ModalEmpresaEmpleadoComponent {
     //       console.error();
     //     }
     //   })
-    
-    }
-  }  
+
+    // }
+  }
 
 }

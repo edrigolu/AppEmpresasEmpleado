@@ -25,7 +25,7 @@ export class EmpresaEmpleadoService {
   }
 
   createRelationship(request: EmpresaEmpleado): Observable<ResponseApi> {
-    return this._httpClient.post<ResponseApi>(`${this.urlApi}Create`, request);
+    return this._httpClient.post<ResponseApi>(`${this.urlApi}Register`, request);
   }
 
 }

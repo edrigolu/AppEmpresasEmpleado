@@ -1,6 +1,6 @@
 <h2 mat-dialog-title>{{titleAction}}</h2>
 <mat-dialog-content>
-    <form [formGroup]="formEmpresaEmpleado" (submit)="saveUser()">
+    <form [formGroup]="formEmpresaEmpleado" (submit)="saveRelationship()">
         <mat-grid-list cols="1" rowHeight="80px">
 
             <mat-grid-tile>
@@ -40,5 +40,5 @@
 <mat-dialog-actions align="center">
     <button class="button-back" mat-raised-button mat-dialog-close>Regresar</button>
     <button class="button-primary" mat-raised-button [disabled]="formEmpresaEmpleado.invalid"
-        (click)="saveUser()">{{buttonAction}}</button>
+        (click)="saveRelationship()">{{buttonAction}}</button>
 </mat-dialog-actions>
