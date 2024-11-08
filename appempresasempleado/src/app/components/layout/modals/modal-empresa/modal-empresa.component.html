@@ -1,1 +1,29 @@
-<p>modal-empresa works!</p>
+<h2 mat-dialog-title>{{titleAction}}</h2>
+<mat-dialog-content>
+    <form [formGroup]="formEmpresa" (submit)="guardarEmpresa()">
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Empresa</mat-label>
+                    <input formControlName="nombreEmpresa" matInput autocomplete="off">
+                    <mat-icon matSuffix>account-box</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Estado</mat-label>
+                    <mat-select formControlName="esActivo">
+                        <mat-option value="1">Activa</mat-option>
+                        <mat-option value="0">No activa</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button class="button-back" mat-raised-button mat-dialog-close>Regresar</button>
+    <button class="button-primary" mat-raised-button [disabled]="formEmpresa.invalid"
+        (click)="guardarEmpresa()">{{buttonAction}}</button>
+</mat-dialog-actions>

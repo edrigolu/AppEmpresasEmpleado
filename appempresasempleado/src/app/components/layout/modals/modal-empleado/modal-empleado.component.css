@@ -1,0 +1,13 @@
+form{
+    width: 350px;
+}
+
+.button-back{
+    background-color: coral;
+    color: aliceblue;
+}
+
+.button-primary{
+    background-color:darkcyan;  
+    color: aliceblue;
+}

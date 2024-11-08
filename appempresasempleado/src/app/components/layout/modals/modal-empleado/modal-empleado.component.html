@@ -1,1 +1,45 @@
-<p>modal-empleado works!</p>
+<h2 mat-dialog-title>{{titleAction}}</h2>
+<mat-dialog-content>
+    <form [formGroup]="formEmpleado" (submit)="guardarEmpleado()">
+        <mat-grid-list cols="1" rowHeight="80px">
+            <mat-grid-tile>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Nombres</mat-label>
+                    <input formControlName="nombres" matInput autocomplete="off">
+                    <mat-icon matSuffix>account-box</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Apellidos</mat-label>
+                    <input formControlName="apellidos" matInput autocomplete="off">
+                    <mat-icon matSuffix>account-box</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Número de documento</mat-label>
+                    <input formControlName="numDocumento" matInput autocomplete="off">
+                    <mat-icon matSuffix>account-box</mat-icon>
+                </mat-form-field>
+            </mat-grid-tile>
+
+            <mat-grid-tile>
+                <mat-form-field class="full-width" appearance="outline">
+                    <mat-label>Estado</mat-label>
+                    <mat-select formControlName="esActivo">
+                        <mat-option value="1">Activo</mat-option>
+                        <mat-option value="0">No activo</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button class="button-back" mat-raised-button mat-dialog-close>Regresar</button>
+    <button class="button-primary" mat-raised-button [disabled]="formEmpleado.invalid"
+        (click)="guardarEmpleado()">{{buttonAction}}</button>
+</mat-dialog-actions>

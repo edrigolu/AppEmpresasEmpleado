@@ -10,7 +10,7 @@ import { Empresa } from '../interfaces/empresa';
 })
 export class EmpresaService {
 
-  private urlApi: string = environment.endpoint + "Empresas/"
+  private urlApi: string = environment.endpoint + "empresas/"
   
   constructor(private _httpClient: HttpClient) { }
 

@@ -10,7 +10,7 @@ import { ResponseApi } from '../interfaces/response-api';
 })
 export class UsuarioService {
 
-  private acceso: string = environment.endpoint + "Acceso/";
+  private acceso: string = environment.endpoint + "usuarios/";
 
   constructor(private http: HttpClient) { }
 

@@ -10,7 +10,7 @@ import { Empleado } from '../interfaces/empleado';
 })
 export class EmpleadoService {
 
-  private urlApi: string = environment.endpoint + "Empleados/"
+  private urlApi: string = environment.endpoint + "empleados/"
   
   constructor(private _httpClient: HttpClient) { }
 
