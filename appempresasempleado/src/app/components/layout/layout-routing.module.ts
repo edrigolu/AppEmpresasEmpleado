@@ -21,18 +21,9 @@ const routes: Routes = [
   }
 ];
 
-
-// @NgModule({
-//   declarations: [],
-//   imports: [
-//     CommonModule
-//   ]
-// })
-// export class LayoutRoutingModule { }
-
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
+
 export class LayoutRoutingModule { }

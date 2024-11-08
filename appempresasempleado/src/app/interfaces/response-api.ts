@@ -1,5 +1,6 @@
 export interface ResponseApi {
     status: boolean,
     msg: string,
-    value: any
+    value: any,
+    token:string
 }
